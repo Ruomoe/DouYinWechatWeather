@@ -13,3 +13,8 @@
 珂珂生日还有: {{keyword4.DATA}}天
 {{remark.DATA}} 
 ```
+# 常见问题
+1. 我将代码Clone后 appid appSecret 天气接口Url 都替换成功了 并且浏览器测试可以访问为什么运行程序报错 SSLXXXXXX 啥的? <br>
+A: 可能是证书出现了问题 可以尝试将天气接口/情话接口的url中 https 替换成 http<br><br>
+2. 模板如何填写?<br>
+A: 在你的微信公众平台中创建信息模板 键值对 值 填入信息模板ID (例如: ```sendMap.put("openid", "模板ID");```)
