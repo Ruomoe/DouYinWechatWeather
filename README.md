@@ -16,6 +16,10 @@
 珂珂生日还有: {{keyword4.DATA}}天
 {{remark.DATA}} 
 ```
+<br>
+本项目已经配置好了 Gradle 下载后使用 idea 打开即可自动配置项目环境<br>
+在 idea 右侧 gradle 中选择 shadowJar 即可打包出 fat-jar 可直接使用命令行运行
+
 # 常见问题
 1. 我将代码Clone后 appid appSecret 天气接口Url 都替换成功了 并且浏览器测试可以访问为什么运行程序报错 SSLXXXXXX 啥的? <br>
 A: 可能是证书出现了问题 可以尝试将天气接口/情话接口的url中 https 替换成 http<br><br>
