@@ -1,0 +1,47 @@
+plugins {
+    id 'java'
+    id "com.github.johnrengelman.shadow" version "5.0.0"
+}
+
+apply plugin: "com.github.johnrengelman.shadow"
+
+group 'cc.canyi.keke'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.projectlombok:lombok:1.18.20'
+    implementation 'mysql:mysql-connector-java:8.0.29'
+    annotationProcessor('org.projectlombok:lombok:1.18.20')
+//    implementation 'io.vertx:vertx-core:4.3.1'
+//    implementation 'io.vertx:vertx-web:4.3.1'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    implementation 'cn.hutool:hutool-all:5.8.4'
+}
+
+shadowJar{
+    //minimize()
+
+    dependencies {
+        exclude('lombok-1.18.20.jar')
+    }
+}
+
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'cc.canyi.keke.LoveKeke'
+        )
+    }
+}
+
+compileJava.options.encoding = 'UTF-8'
+compileTestJava.options.encoding = 'UTF-8'
+
+test {
+    useJUnitPlatform()
+}
